@@ -14,12 +14,21 @@ public class TennisCoach implements Coach {
 		System.out.println(">> TennisCoah:  inside default constructor");
 	}
 	
+	// define any random method for dependency injection
+	@Autowired
+	public void doSomeCrazyStuff(FortuneService theFortuneService) {
+		System.out.println(">> TennisCoah:  inside doSomeCreazyStuff() constructor");
+		this.fortuneService = theFortuneService;
+	}
+	
 	// define a setter method
+	/*
 	@Autowired
 	public void setFortuneService(FortuneService theFortuneService) {
 		System.out.println(">> TennisCoah:  inside setter constructor");
 		this.fortuneService = theFortuneService;
 	}
+	*/
 	
 	/*
 	 * Injecting the dependency using @Autowired annotation
